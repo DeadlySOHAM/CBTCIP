@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.soham.todo.fragments.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_unscheduledTaskFragment"
+            app:destination="@id/unscheduledTaskFragment"
+            app:launchSingleTop="true"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="com.soham.todo.fragments.SignUpFragment"
+        android:label="Sign Up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/action_signUpFragment_to_unscheduledTaskFragment"
+            app:destination="@id/unscheduledTaskFragment"
+            app:popUpTo="@id/signUpFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/unscheduledTaskFragment"
+        android:name="com.soham.todo.fragments.UnscheduledTaskFragment"
+        android:label="Unscheduled Task"
+        tools:layout="@layout/fragment_unscheduled_task" >
+        <action
+            android:id="@+id/action_unscheduledTaskFragment_to_scheduledTaskFragment"
+            app:destination="@id/scheduledTaskFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/scheduledTaskFragment"
+        android:name="com.soham.todo.fragments.ScheduledTaskFragment"
+        android:label="Scheduled Task"
+        tools:layout="@layout/fragment_scheduled_task" />
+
+</navigation>

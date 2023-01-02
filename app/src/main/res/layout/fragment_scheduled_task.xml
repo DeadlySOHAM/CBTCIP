@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.ScheduledTaskFragment">
+
+    <data>
+        <variable
+            name="scheduledTaskFragment"
+            type="com.soham.todo.fragments.ScheduledTaskFragment" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/main_background">
+
+        <Button
+            android:id="@+id/set_date_button"
+            style="@style/date_time_button"
+            android:onClick="@{(view)->scheduledTaskFragment.setDate(view)}"
+            android:text="@string/date_text"
+            app:layout_constraintEnd_toStartOf="@+id/set_time_button"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/task_text_input_layout" />
+
+        <Button
+            android:id="@+id/set_time_button"
+            style="@style/date_time_button"
+            android:onClick="@{(view)->scheduledTaskFragment.setTime(view)}"
+            android:text="@string/time_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/set_date_button"
+            app:layout_constraintTop_toBottomOf="@+id/task_text_input_layout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/task_text_input_layout"
+        style="@style/task_input_layout"
+        app:layout_constraintBottom_toBottomOf="@+id/add_task_button"
+        app:layout_constraintEnd_toStartOf="@+id/add_task_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/add_task_button">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/task_text_input"
+            style="@style/task_input_field"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/add_task_button"
+        style="@style/add_button"
+        android:onClick="@{(view)->scheduledTaskFragment.addTask(view)}"
+        app:backgroundTint="#00FF00"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_baseline_add_24" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/unscheduled_task_list"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_margin="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/set_date_button"
+            app:layout_constraintVertical_bias="1.0"
+            tools:listitem="@layout/unscheduled_recycler_item">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
