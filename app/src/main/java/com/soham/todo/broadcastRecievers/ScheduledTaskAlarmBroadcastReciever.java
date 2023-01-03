@@ -46,7 +46,7 @@ public class ScheduledTaskAlarmBroadcastReciever extends BroadcastReceiver {
         NotificationCompat.Builder notificationBuilder = new NotificationCompat.Builder(context,CONSTANT_CLASS.VERBOSE_NOTIFICATION_CHANNEL_ID)
                 .setContentTitle("Todo")
                 .setContentText(taskMessage)
-                .setSmallIcon(R.drawable.ic_twotone_calendar_month_24)
+                .setSmallIcon(R.drawable.ic_baseline_date_range_24)
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setSound( RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION))
                 .setVibrate(new long[] { 1000, 500 });
