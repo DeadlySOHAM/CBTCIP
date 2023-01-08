@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/unscheduledTaskFragment">
+    app:startDestination="@id/passkeyFragment">
 
     <fragment
-        android:id="@+id/loginFragment"
-        android:name="com.soham.todo.fragments.LoginFragment"
+        android:id="@+id/passkeyFragment"
+        android:name="com.soham.todo.fragments.PasskeyFragment"
         android:label="Login"
-        tools:layout="@layout/fragment_login" >
+        tools:layout="@layout/fragment_passkey" >
         <action
             android:id="@+id/action_loginFragment_to_unscheduledTaskFragment"
             app:destination="@id/unscheduledTaskFragment"
             app:launchSingleTop="true"
-            app:popUpTo="@id/loginFragment"
+            app:popUpTo="@id/passkeyFragment"
             app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_loginFragment_to_signUpFragment"
             app:destination="@id/signUpFragment"
-            app:popUpTo="@id/loginFragment"
+            app:popUpTo="@id/passkeyFragment"
             app:popUpToInclusive="true" />
     </fragment>
     <fragment
@@ -30,6 +30,11 @@
         <action
             android:id="@+id/action_signUpFragment_to_unscheduledTaskFragment"
             app:destination="@id/unscheduledTaskFragment"
+            app:popUpTo="@id/signUpFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_signUpFragment_to_fragmentLogin"
+            app:destination="@id/fragmentLogin"
             app:popUpTo="@id/signUpFragment"
             app:popUpToInclusive="true" />
     </fragment>
@@ -48,5 +53,16 @@
         android:name="com.soham.todo.fragments.ScheduledTaskFragment"
         android:label="Scheduled Task"
         tools:layout="@layout/fragment_scheduled_task" />
+    <fragment
+        android:id="@+id/fragmentLogin"
+        android:name="com.soham.todo.fragments.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_fragmentLogin_to_unscheduledTaskFragment"
+            app:destination="@id/unscheduledTaskFragment"
+            app:popUpTo="@id/fragmentLogin"
+            app:popUpToInclusive="true" />
+    </fragment>
 
 </navigation>

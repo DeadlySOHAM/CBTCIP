@@ -22,7 +22,7 @@
             android:id="@+id/user_name_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_margin="8dp"
             android:inputType="textPersonName"
             android:hint="@string/enter_username_hint"
             app:layout_constraintEnd_toEndOf="parent"
@@ -31,13 +31,13 @@
 
         <Space
             android:layout_width="0dp"
-            android:layout_height="24dp"/>
+            android:layout_height="16dp"/>
 
         <EditText
             android:id="@+id/password_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_margin="8dp"
             android:hint="@string/enter_password_hint"
             android:inputType="textPassword"
             app:layout_constraintEnd_toEndOf="parent"
@@ -46,13 +46,13 @@
 
         <Space
             android:layout_width="0dp"
-            android:layout_height="24dp"/>
+            android:layout_height="16dp"/>
 
         <EditText
             android:id="@+id/confirm_password_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_margin="8dp"
             android:inputType="textPassword"
             android:hint="@string/confirm_password_hint"
             app:layout_constraintEnd_toEndOf="parent"
@@ -67,7 +67,7 @@
             android:id="@+id/passkey_input_field"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_margin="8dp"
             android:ems="10"
             android:inputType="numberPassword"
             android:hint="@string/enter_passkey_hint"
@@ -81,16 +81,22 @@
             android:layout_height="24dp"/>
 
         <Button
-            android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="16dp"
+            android:layout_margin="8dp"
             android:text="@string/sign_up_button_text"
             android:onClick="@{()->signUpFragment.saveUserData()}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/passkey_input_field" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/login_button_text"
+            android:onClick="@{()->signUpFragment.goToLogin()}"/>
 
     </LinearLayout>
 

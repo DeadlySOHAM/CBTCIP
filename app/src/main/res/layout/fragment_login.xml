@@ -1,53 +1,51 @@
-
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.soham.todo.fragments.LoginFragment">
-
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    tools:context=".fragments.LoginFragment">
     <data>
         <variable
-            name="fragmentLogin"
+            name="loginFragment"
             type="com.soham.todo.fragments.LoginFragment" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        style="@style/main_background">
+    <LinearLayout
+        style="@style/main_background"
+        android:gravity="center"
+        android:orientation="vertical">
+
 
         <EditText
-            android:id="@+id/passkey_input"
+            android:id="@+id/username_field"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:hint="@string/enter_username_hint"
+            android:inputType="textPersonName" />
+
+        <Space
             android:layout_width="0dp"
+            android:layout_height="16dp" />
+
+        <EditText
+            android:id="@+id/password_field_login"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="24dp"
-            android:padding="16dp"
-            android:inputType="numberPassword"
-            android:hint="@string/enter_passkey_hint"
-            app:layout_constraintBottom_toTopOf="@+id/login_button"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_margin="8dp"
+            android:hint="@string/enter_password_hint"
+            android:inputType="textPassword" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="24dp" />
 
         <Button
-            android:id="@+id/login_button"
-            android:layout_width="wrap_content"
+            android:id="@+id/button"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_margin="8dp"
             android:text="@string/login_button_text"
-            android:clickable="true"
-            android:focusable="true"
-            android:onClick="@{()->fragmentLogin.Login()}"
-            android:layout_margin="16dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toStartOf="parent" />
+            android:onClick="@{(v)->loginFragment.loginUser(v)}"/>
 
-        <Button
-            android:id="@+id/sign_up_button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/sign_up_button_text"
-            android:clickable="true"
-            android:focusable="true"
-            android:onClick="@{()->fragmentLogin.signUp()}"
-            android:layout_margin="24dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </layout>

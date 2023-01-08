@@ -45,10 +45,10 @@ public class SignUpFragment extends Fragment {
     }
 
     public void saveUserData(){
-        if(binding.userNameField.getText().length()>2 &&
-            binding.passkeyInputField.getText().length() > 4 &&
-            binding.passwordField.getText().length() > 2 &&
-            binding.confirmPasswordField.getText().length()>2 &&
+        if(binding.userNameField.getText().length()>0 &&
+            binding.passkeyInputField.getText().length() > 0 &&
+            binding.passwordField.getText().length() > 0 &&
+            binding.confirmPasswordField.getText().length()>0 &&
                 String.valueOf(binding.passwordField.getText())
                         .equals(String.valueOf(binding.confirmPasswordField.getText()))
         ) {
@@ -73,6 +73,11 @@ public class SignUpFragment extends Fragment {
 
     private void goToUnscheduledTasks() {
         NavDirections action = SignUpFragmentDirections.actionSignUpFragmentToUnscheduledTaskFragment();
+        findNavController(this).navigate(action);
+    }
+
+    public void goToLogin(){
+        NavDirections action = SignUpFragmentDirections.actionSignUpFragmentToFragmentLogin();
         findNavController(this).navigate(action);
     }
 
