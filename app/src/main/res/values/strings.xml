@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Unit Converter</string>
+    <string-array name="unit_array">
+        <item>Kilo</item>
+        <item>Hecta</item>
+        <item>Deca</item>
+        <item>Base Unit</item>
+        <item>Deci</item>
+        <item>Centi</item>
+        <item>Milli</item>
+    </string-array>
+    <string name="enter_value_hint">Enter Value</string>
+    <string name="calculate_btn_text">Calculate</string>
+</resources>
