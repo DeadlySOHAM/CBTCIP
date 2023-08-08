@@ -1,4 +1,4 @@
-## This Repository is suppose to contain all the internship projects of *Oasis Infobyte*
+## This Repository is suppose to contain all the internship projects of *CipherByte*
 This is the task 3
 
 app : Calculator
